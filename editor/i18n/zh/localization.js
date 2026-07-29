@@ -522,6 +522,15 @@ module.exports = {
         url: '指定一个 URL 地址，这个地址以 http 或者 https 开头，请填写一个有效的 URL 地址。',
         webviewEvents: 'Webview 的回调事件，当网页加载过程中，加载完成后或者加载出错时都会回调此函数',
     },
+    animated_image: {
+        sourceType: '图片来源：IMAGE 表示引用一个按默认方式导入的图片资源（推荐），REMOTE 表示远程 URL，LOCAL 表示本地 BufferAsset。',
+        image: '要播放的图片资源（按默认方式导入的动画 APNG 或 GIF）。把图片当普通图片导入后拖到这里即可。',
+        clip: '持有编码字节的本地 BufferAsset（LOCAL 来源时使用）。',
+        remoteURL: '动画图片的远程 URL（REMOTE 来源时使用，注意跨域 CORS）。',
+        playOnAwake: '图片加载完成后是否自动开始播放？',
+        loop: '动画是否循环播放。',
+        playbackRate: '播放速率（0.0 ~ 10.0）。',
+    },
     richtext: {
         string: '富文本的内容字符串, 你可以在里面使用 BBCode 来指定特定文本的样式',
         horizontal_align: '水平对齐方式',
@@ -846,6 +855,18 @@ module.exports = {
         webview: {
             label: "Web View",
             description: "支持显示 Web 内容。",
+        },
+        animated_image: {
+            label: "动画图片",
+            description: "动画图片（APNG / GIF）播放支持。",
+        },
+        animated_image_apng: {
+            label: "APNG",
+            description: "动画 PNG (APNG) 解码支持。",
+        },
+        animated_image_gif: {
+            label: "GIF",
+            description: "动画 GIF 解码支持。",
         },
         tween: {
             label: "缓动系统",

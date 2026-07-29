@@ -25,6 +25,8 @@
         "video": { "modules": [ "video" ] },
         "terrain": { "modules": [ "terrain" ] },
         "webview": { "modules": [ "webview" ] },
+        "animated-image-apng": { "modules": ["animated-image", "2d"], "intrinsicFlags": { "ANIMATED_IMAGE_APNG": true } },
+        "animated-image-gif": { "modules": ["animated-image", "2d"], "intrinsicFlags": { "ANIMATED_IMAGE_GIF": true } },
         "tween": { "modules": [ "tween" ] },
         "tiled-map": { "modules": [ "tiled-map" ] },
         "spine": { "modules": [ "spine" ] },
@@ -69,7 +71,8 @@
                 "pal/audio": "pal/audio/web/player.ts",
                 "pal/system-info": "pal/system-info/web/system-info.ts",
                 "pal/screen-adapter": "pal/screen-adapter/web/screen-adapter.ts",
-                "pal/input": "pal/input/web/index.ts"
+                "pal/input": "pal/input/web/index.ts",
+                "pal/image-decoder": "pal/image-decoder/web/image-decoder-web.ts"
             }
         },
         {
@@ -80,7 +83,8 @@
                 "pal/audio": "pal/audio/native/player.ts",
                 "pal/system-info": "pal/system-info/native/system-info.ts",
                 "pal/screen-adapter": "pal/screen-adapter/native/screen-adapter.ts",
-                "pal/input": "pal/input/native/index.ts"
+                "pal/input": "pal/input/native/index.ts",
+                "pal/image-decoder": "pal/image-decoder/native/image-decoder-native.ts"
             }
         },
         {
@@ -91,7 +95,8 @@
                 "pal/audio": "pal/audio/minigame/player.ts",
                 "pal/system-info": "pal/system-info/minigame/system-info.ts",
                 "pal/screen-adapter": "pal/screen-adapter/minigame/screen-adapter.ts",
-                "pal/input": "pal/input/minigame/index.ts"
+                "pal/input": "pal/input/minigame/index.ts",
+                "pal/image-decoder": "pal/image-decoder/minigame/image-decoder-minigame.ts"
             }
         },
         {
@@ -102,7 +107,8 @@
                 "pal/audio": "pal/audio/minigame/player.ts",
                 "pal/system-info": "pal/system-info/minigame/system-info.ts",
                 "pal/screen-adapter": "pal/screen-adapter/minigame/screen-adapter.ts",
-                "pal/input": "pal/input/minigame/index.ts"
+                "pal/input": "pal/input/minigame/index.ts",
+                "pal/image-decoder": "pal/image-decoder/minigame/image-decoder-minigame.ts"
             }
         },
         {
@@ -117,6 +123,20 @@
             "isVirtualModule": false,
             "overrides": {
                 "cocos/core/animation/marionette/runtime-exports.ts": "cocos/core/animation/marionette/index-empty.ts"
+            }
+        },
+        {
+            "test": "!context.buildTimeConstants.ANIMATED_IMAGE_APNG",
+            "isVirtualModule": false,
+            "overrides": {
+                "pal/image-decoder/apng/apng-decoder.ts": "pal/image-decoder/apng/apng-decoder-empty.ts"
+            }
+        },
+        {
+            "test": "!context.buildTimeConstants.ANIMATED_IMAGE_GIF",
+            "isVirtualModule": false,
+            "overrides": {
+                "pal/image-decoder/gif/gif-decoder.ts": "pal/image-decoder/gif/gif-decoder-empty.ts"
             }
         }
     ],

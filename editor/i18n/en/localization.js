@@ -532,6 +532,15 @@ module.exports = {
         url: 'A given URL to be loaded by the Webview, it should have a http or https prefix.',
         webviewEvents: "The Webview's event callback , it will be triggered when certain Webview event occurs.",
     },
+    animated_image: {
+        sourceType: 'Source of the image: IMAGE references an image asset imported the default way (recommended), REMOTE is a remote URL, LOCAL is a local BufferAsset.',
+        image: 'The image asset to play (an animated APNG or GIF imported as a normal image). Import the image and drag it here.',
+        clip: 'A local BufferAsset holding the encoded bytes (used when the source is LOCAL).',
+        remoteURL: 'The remote URL of the animated image (used when the source is REMOTE; watch out for CORS).',
+        playOnAwake: 'Whether to start playing automatically after the image is loaded?',
+        loop: 'Whether the animation loops.',
+        playbackRate: 'The playback rate (0.0 ~ 10.0).',
+    },
     richtext: {
         string: 'Text of the RichText, you could use BBcode in the string',
         horizontal_align: 'Horizontal alignment',
@@ -865,6 +874,18 @@ module.exports = {
         webview: {
             label: "Web View",
             description: "Support displaying Web contents.",
+        },
+        animated_image: {
+            label: "Animated Image",
+            description: "Animated image (APNG / GIF) playback support.",
+        },
+        animated_image_apng: {
+            label: "APNG",
+            description: "Animated PNG (APNG) decoding support.",
+        },
+        animated_image_gif: {
+            label: "GIF",
+            description: "Animated GIF decoding support.",
         },
         tween: {
             label: "Tween",

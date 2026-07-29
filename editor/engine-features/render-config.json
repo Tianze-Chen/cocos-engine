@@ -156,6 +156,23 @@
             "native": "USE_WEBVIEW",
             "wechatPlugin": true
         },
+        "animated-image": {
+            "default": ["animated-image-apng", "animated-image-gif"],
+            "multi": true,
+            "label": "i18n:ENGINE.features.animated_image.label",
+            "description": "i18n:ENGINE.features.animated_image.description",
+            "category": "2d",
+            "options": {
+                "animated-image-apng": {
+                    "label": "i18n:ENGINE.features.animated_image_apng.label",
+                    "description": "i18n:ENGINE.features.animated_image_apng.description"
+                },
+                "animated-image-gif": {
+                    "label": "i18n:ENGINE.features.animated_image_gif.label",
+                    "description": "i18n:ENGINE.features.animated_image_gif.description"
+                }
+            }
+        },
         "tween": {
             "default": ["tween"],
             "label": "i18n:ENGINE.features.tween.label",

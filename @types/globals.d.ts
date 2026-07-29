@@ -100,3 +100,35 @@ declare type Setter = (value: any) => void;
 declare const Buffer: any;
 
 declare type EnumAlias<EnumT> = EnumT[keyof EnumT];
+
+// OffscreenCanvas is available in modern browsers but not in the TS lib used by the engine.
+interface OffscreenCanvas extends EventTarget {
+    width: number;
+    height: number;
+    getContext(contextId: '2d', options?: CanvasRenderingContext2DSettings): OffscreenCanvasRenderingContext2D | null;
+}
+declare const OffscreenCanvas: {
+    prototype: OffscreenCanvas;
+    new (width: number, height: number): OffscreenCanvas;
+};
+interface OffscreenCanvasRenderingContext2D extends CanvasState,
+    CanvasTransform,
+    CanvasCompositing,
+    CanvasImageSmoothing,
+    CanvasFillStrokeStyles,
+    CanvasShadowStyles,
+    CanvasFilters,
+    CanvasRect,
+    CanvasDrawPath,
+    CanvasText,
+    CanvasDrawImage,
+    CanvasImageData,
+    CanvasPathDrawingStyles,
+    CanvasTextDrawingStyles,
+    CanvasPath {
+    readonly canvas: OffscreenCanvas;
+    getImageData(sx: number, sy: number, sw: number, sh: number): ImageData;
+}
+declare const OffscreenCanvasRenderingContext2D: {
+    prototype: OffscreenCanvasRenderingContext2D;
+};
