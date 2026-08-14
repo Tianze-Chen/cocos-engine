@@ -58,6 +58,8 @@ export * from '../cocos/input';
 
 export * from '../cocos/native-binding/index';
 
+export * from './webassembly';
+
 type Constructor_<T = unknown> = Constructor<T>;
 
 export type { Constructor_ as Constructor };
